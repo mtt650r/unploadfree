@@ -1,0 +1,75 @@
+:root {
+  --bg: #0b1220;
+  --card: #101a2f;
+  --text: #e8eefc;
+  --muted: #98a6c7;
+  --accent: #4f8cff;
+  --danger: #ff4f4f;
+  --border: rgba(255,255,255,0.12);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 20% 10%, #13264d 0%, var(--bg) 55%);
+  color: var(--text);
+}
+.container { max-width: 980px; margin: 0 auto; padding: 28px 18px; }
+.card {
+  background: rgba(16, 26, 47, 0.85);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  backdrop-filter: blur(10px);
+}
+.row { display: flex; gap: 14px; flex-wrap: wrap; }
+.row > * { flex: 1; min-width: 240px; }
+h1 { font-size: 22px; margin: 0 0 10px; }
+p { color: var(--muted); margin: 6px 0 14px; line-height: 1.45; }
+.dropzone {
+  border: 2px dashed rgba(255,255,255,0.22);
+  border-radius: 14px;
+  padding: 22px;
+  text-align: center;
+  cursor: pointer;
+  transition: 160ms ease;
+}
+.dropzone.dragover { border-color: var(--accent); background: rgba(79, 140, 255, 0.08); }
+label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+input, button {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  font-size: 14px;
+  background: rgba(0,0,0,0.18);
+  color: var(--text);
+}
+button {
+  background: linear-gradient(90deg, rgba(79,140,255,0.95), rgba(111,208,255,0.95));
+  border: none;
+  cursor: pointer;
+  font-weight: 650;
+}
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+.small { font-size: 12px; color: var(--muted); }
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+}
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.alert { padding: 10px 12px; border-radius: 12px; border: 1px solid var(--border); }
+.alert.error { border-color: rgba(255,79,79,0.5); background: rgba(255,79,79,0.08); }
+.alert.ok { border-color: rgba(79,255,155,0.5); background: rgba(79,255,155,0.08); }
+.video-wrap {
+  background: rgba(0,0,0,0.22);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px;
+}
+video { width: 100%; border-radius: 12px; }

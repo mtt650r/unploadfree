@@ -1,0 +1,10 @@
+{
+  "name": "uploadfree-netlify-functions",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.651.1",
+    "@aws-sdk/s3-request-presigner": "^3.651.1",
+    "nanoid": "^5.0.7"
+  }
+}

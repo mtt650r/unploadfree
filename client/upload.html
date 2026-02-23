@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UploadFree.net — Upload Video</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Upload Video</h1>
+      <p>Drag & drop a video (max 30MB). You’ll get a private watch link that shows <b>only that video</b>.</p>
+
+      <div class="row">
+        <div>
+          <div id="dropzone" class="dropzone">
+            <div class="badge">Drop video here</div>
+            <p class="small" style="margin-top:10px">or click to choose a file (MP4/WebM/OGG/MOV)</p>
+            <input id="fileInput" type="file" accept="video/mp4,video/webm,video/ogg,video/quicktime" hidden />
+          </div>
+
+          <div style="margin-top:12px">
+            <div class="small" id="fileInfo">No file selected</div>
+          </div>
+        </div>
+
+        <div>
+          <label for="adminKey">Admin upload key</label>
+          <input id="adminKey" placeholder="Paste your ADMIN_UPLOAD_KEY" />
+
+          <div class="row" style="margin-top:12px">
+            <div>
+              <label for="viewLimit">View limit (0 = unlimited)</label>
+              <input id="viewLimit" type="number" min="0" value="0" />
+            </div>
+            <div>
+              <label for="expiresDays">Expires in days (0 = never)</label>
+              <input id="expiresDays" type="number" min="0" value="0" />
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <button id="uploadBtn" disabled>Upload</button>
+          </div>
+
+          <div style="margin-top:12px" id="status"></div>
+
+          <hr />
+          <div class="small">
+            Tip: keep <b>upload.html</b> private and only share watch links.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./upload.js"></script>
+</body>
+</html>
