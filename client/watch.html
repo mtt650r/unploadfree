@@ -3,24 +3,43 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>UploadFree.net — Watch</title>
-  <link rel="stylesheet" href="./styles.css" />
+  <title>Watch</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      height: 100%;
+      width: 100%;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .wrap {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+    video {
+      width: min(100vw, 1100px);
+      height: auto;
+      max-height: 100vh;
+      background: #000; /* only the player area is black while loading */
+      outline: none;
+    }
+    .error {
+      color: #111;
+      padding: 16px;
+      max-width: 700px;
+      text-align: center;
+      line-height: 1.4;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <h1 id="title">Loading…</h1>
-      <p id="meta" class="small"></p>
-
-      <div class="video-wrap">
-        <video id="player" controls playsinline preload="metadata"></video>
-      </div>
-
-      <div id="status" style="margin-top:12px"></div>
-      <p class="small" style="margin-top:14px">
-        This page does not list other videos. It only plays the one linked by token.
-      </p>
-    </div>
+  <div class="wrap">
+    <video id="player" controls playsinline preload="metadata"></video>
+    <div id="err" class="error" style="display:none;"></div>
   </div>
 
   <script src="./watch.js"></script>
